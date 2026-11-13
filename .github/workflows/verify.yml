@@ -1,0 +1,24 @@
+name: Verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+      - run: python benchmark.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: abprop-results
+          path: results/
