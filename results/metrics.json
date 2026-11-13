@@ -1,0 +1,58 @@
+{
+  "ridge": {
+    "token_signal": {
+      "rmse": 0.03662906343860762,
+      "spearman": 0.996338191886338
+    },
+    "geometry_signal": {
+      "rmse": 0.44486316230015116,
+      "spearman": -0.017322696471255523
+    },
+    "interaction": {
+      "rmse": 0.29677902446261967,
+      "spearman": 0.010939222632136697
+    }
+  },
+  "sequence": {
+    "token_signal": {
+      "rmse": 0.16343786476062688,
+      "spearman": 0.9760161952234753
+    },
+    "geometry_signal": {
+      "rmse": 0.4057423383443815,
+      "spearman": 0.03609163548826625
+    },
+    "interaction": {
+      "rmse": 0.251376000599939,
+      "spearman": 0.13743203783566899
+    }
+  },
+  "geometry": {
+    "token_signal": {
+      "rmse": 0.6046968798160577,
+      "spearman": -0.006052817187966255
+    },
+    "geometry_signal": {
+      "rmse": 0.03688775208206901,
+      "spearman": 0.994991590483683
+    },
+    "interaction": {
+      "rmse": 0.2680251416897384,
+      "spearman": -0.0782831022976969
+    }
+  },
+  "fusion": {
+    "token_signal": {
+      "rmse": 0.05582504304377865,
+      "spearman": 0.9940963839079837
+    },
+    "geometry_signal": {
+      "rmse": 0.04526178618253777,
+      "spearman": 0.9937895043810869
+    },
+    "interaction": {
+      "rmse": 0.07390726719127426,
+      "spearman": 0.9490325665301252
+    }
+  }
+}

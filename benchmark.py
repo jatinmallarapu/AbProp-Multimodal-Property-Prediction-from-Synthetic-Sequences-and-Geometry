@@ -68,7 +68,9 @@ def fit(features, labels, train, dev):
                 best = {key: value.clone() for key, value in model.state_dict().items()}
     model.load_state_dict(best)
     with torch.no_grad():
-        return (model(x) * scale + mean).numpy(), best
+        return (model(x) * scale + mean).numpy(), {
+            "weights": best, "target_mean": mean.tolist(), "target_scale": scale.tolist(),
+        }
 
 
 def main():
@@ -91,7 +93,7 @@ def main():
         predicted, weights = fit(features, labels, train, dev)
         report[name] = metrics(labels[test], predicted[test])
         if name == "fusion":
-            torch.save({"weights": weights, "geometry_mean": mean.tolist(),
+            torch.save({**weights, "geometry_mean": mean.tolist(),
                         "geometry_scale": scale.tolist()}, args.output / "fusion.pt")
     fig, axes = plt.subplots(1, 3, figsize=(10, 3.4), layout="constrained")
     for idx, ax in enumerate(axes):
