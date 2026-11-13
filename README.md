@@ -4,7 +4,7 @@ Multitask regression using artificial token sequences and spatial geometry. The 
 
 Run `python -m pip install -r requirements.txt`, then `python benchmark.py`. The run writes per-target RMSE and Spearman correlation, a predicted-versus-actual SVG, and fusion model weights under `results/`. Compare ridge regression on positional one-hot features against sequence-only, geometry-only, and fusion MLPs. Checkpoints are selected using validation loss. See [model card](MODEL_CARD.md).
 
-The current workflow artifact also includes the fusion checkpoint with geometry and target normalization.
+The workflow artifact includes the fusion checkpoint with geometry and target normalization.
 
 ## Held-out results
 
@@ -17,4 +17,4 @@ The current workflow artifact also includes the fusion checkpoint with geometry 
 
 Fusion reduced interaction RMSE from 0.251 for the best single-modality model to 0.074. Ridge had the lowest token RMSE and the geometry-only MLP had the lowest geometry RMSE. The 192 test examples come from 12 held-out families and the results are for seed 42.
 
-[Verified run](https://github.com/jatinmallarapu/AbProp-Multimodal-Property-Prediction-from-Synthetic-Sequences-and-Geometry/actions/runs/43386608514) · [Initial run results and plot](https://github.com/jatinmallarapu/AbProp-Multimodal-Property-Prediction-from-Synthetic-Sequences-and-Geometry/actions/runs/43386608514/artifacts/14018882778)
+[Verified run](https://github.com/jatinmallarapu/AbProp-Multimodal-Property-Prediction-from-Synthetic-Sequences-and-Geometry/actions/runs/43386608514) · [Results, plot and checkpoint](https://github.com/jatinmallarapu/AbProp-Multimodal-Property-Prediction-from-Synthetic-Sequences-and-Geometry/actions/runs/43386883809/artifacts/14018604043)
